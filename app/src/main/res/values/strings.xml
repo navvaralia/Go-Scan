@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GoScan</string>
+    <string name="add_groceries">Add Groceries</string>
+    <string name="insert_title">Masukkan Judul</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="grocery_brand">Merek Barang</string>
+    <string name="grocery_type">Tipe Barang</string>
+    <string name="grocery_price">Harga Barang</string>
+    <string name="grocery_total">Jumlah Barang</string>
+    <string name="grocery_name">Nama Barang</string>
+</resources>
