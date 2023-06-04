@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:menuCategory="container">
+        <item
+            android:id="@+id/groceriesHistory"
+            android:icon="@drawable/ic_grocery_history"
+            android:title="@string/grocery_history"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/appMode"
+            android:icon="@drawable/ic_app_mode"
+            android:title="@string/app_mode"
+            app:showAsAction="ifRoom"/>
+    </group>
+</menu>
