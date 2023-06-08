@@ -10,7 +10,7 @@
 
         <item
             android:id="@+id/appMode"
-            android:icon="@drawable/ic_app_mode"
+            android:icon="@drawable/ic_dark_mode"
             android:title="@string/app_mode"
             app:showAsAction="ifRoom"/>
     </group>

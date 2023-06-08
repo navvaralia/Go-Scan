@@ -22,4 +22,23 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="success_add">Data Berhasil Disimpan</string>
+    <string name="failed_add">Data Tidak Berhasil Disimpan</string>
+    <string name="failed_get_list">Gagal Mengambil Daftar</string>
+    <string name="total_count">Total: %1$s</string>
+    <string name="payment">Pembayaran</string>
+    <string name="payment_confirmation">Apakah Belanjaan Sudah Terbayar?</string>
+    <string name="yes">IYA</string>
+    <string name="no">TIDAK</string>
+    <string name="success_adding_history">Berhasil Ditambahkan Ke Riwayat Transaksi</string>
+    <string name="failed_adding_history">Gagal Ditambahkan Ke Riwayat Transaksi</string>
+    <string name="success_adding_groceries">Berhasil Menambahkan Belanjaan</string>
+    <string name="failed_adding_groceries">Gagal Menambahkan Belanjaan</string>
+    <string name="delete_history">Hapus Riwayat Transaksi</string>
+    <string name="delete_history_title">Menghapus Riwayat Transaksi</string>
+    <string name="delete_confirmation">Apakah Anda Yakin Ingin Menghapus Riwayat Transaksi</string>
+    <string name="success_delete_history">Berhasil Menghapus Riwayat Transaksi</string>
+    <string name="failed_deleting_history">Gagal Menghapus Riwayat Transaksi</string>
+    <string name="no_data_warning">Tidak Ada Data Barang</string>
+    <string name="no_permission">Kamera Tidak Mendapatkan Izin</string>
 </resources>

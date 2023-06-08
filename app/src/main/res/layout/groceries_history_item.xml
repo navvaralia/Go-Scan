@@ -1,26 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:elevation="8dp"
+    android:background="@drawable/history_item_bg"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp"
-    app:cardBackgroundColor="?attr/colorBackgroundFloating">
+    android:layout_marginBottom="8dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_margin="1dp"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_weight="1"
+        android:width="0dp"
+        tools:text="Sari Roti"
+        android:textAlignment="center" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvProductAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_weight="1"
+        android:width="0dp"
+        tools:text="2"
+        android:textAlignment="center" />
 
-</androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:width="0dp"
+        tools:text="Rp15.000"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvProductDate"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:width="0dp"
+        tools:text="Jun 2, 2023"
+        android:textAlignment="center" />
+
+</LinearLayout>
