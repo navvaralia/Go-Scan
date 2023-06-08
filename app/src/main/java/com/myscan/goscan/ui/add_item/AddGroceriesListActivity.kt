@@ -3,7 +3,6 @@ package com.myscan.goscan.ui.add_item
 import android.Manifest.permission
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
@@ -20,11 +19,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.myscan.goscan.R
 import com.myscan.goscan.data.item_class.GroceriesItem
 import com.myscan.goscan.databinding.ActivityAddGroceriesListBinding
-import com.myscan.goscan.ml.ModelMnv2V2Converted
 import com.myscan.goscan.ui.main.MainActivity
 import com.myscan.goscan.ui.view_model.GroceriesViewModel
 import com.myscan.goscan.utils.createCustomTempFile
-import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 
 class AddGroceriesListActivity : AppCompatActivity() {
@@ -131,14 +128,6 @@ class AddGroceriesListActivity : AppCompatActivity() {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
-    private fun classifyGenerator(bitmap: Bitmap) {
-        val model = ModelMnv2V2Converted.newInstance(this)
-
-        val newestBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
-        val tensorImage = TensorImage.fromBitmap(newestBitmap)
-
-    }
-
     private val addTextWatcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
             binding.fabAddGroceriesItems.isEnabled = listOf(
@@ -154,7 +143,6 @@ class AddGroceriesListActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }

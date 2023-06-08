@@ -41,4 +41,5 @@
     <string name="failed_deleting_history">Gagal Menghapus Riwayat Transaksi</string>
     <string name="no_data_warning">Tidak Ada Data Barang</string>
     <string name="no_permission">Kamera Tidak Mendapatkan Izin</string>
+    <string name="rupiah">Rp %s</string>
 </resources>
