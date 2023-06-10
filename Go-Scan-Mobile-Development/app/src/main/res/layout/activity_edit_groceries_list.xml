@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_edit_groceries_list"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.add_item.AddGroceriesListActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImageHolder"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:elevation="6dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RounderBorder"
+            app:srcCompat="@drawable/ic_image_holder" />
+
+        <Button
+            android:id="@+id/btnCamera"
+            style="Widget.MaterialComponents.Button.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/camera"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_camera"
+            app:iconGravity="textStart"
+            app:iconTint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/ivImageHolder"
+            app:layout_constraintStart_toStartOf="@+id/ivImageHolder"
+            app:layout_constraintTop_toBottomOf="@+id/ivImageHolder" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiLayoutBrand"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/btnCamera"
+            app:layout_constraintStart_toStartOf="@+id/btnCamera"
+            app:layout_constraintTop_toBottomOf="@+id/btnCamera"
+            app:startIconDrawable="@drawable/ic_grocery">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/grocery_name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiLayoutPrice"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/tiLayoutBrand"
+            app:layout_constraintStart_toStartOf="@+id/tiLayoutBrand"
+            app:layout_constraintTop_toBottomOf="@+id/tiLayoutBrand"
+            app:startIconDrawable="@drawable/ic_wallet">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiPrice"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/grocery_price" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiLayoutQuantity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/tiLayoutPrice"
+            app:layout_constraintStart_toStartOf="@+id/tiLayoutPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tiLayoutPrice"
+            app:startIconDrawable="@drawable/ic_cart">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiQuantity"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/grocery_total" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddGroceriesItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="8dp"
+            android:strokeWidth="20"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiLayoutQuantity"
+            app:layout_constraintVertical_bias="0.761"
+            app:srcCompat="@drawable/ic_checked" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCancelGroceriesItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:strokeWidth="20"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fabAddGroceriesItems"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiLayoutQuantity"
+            app:layout_constraintVertical_bias="0.761"
+            app:srcCompat="@drawable/ic_delete_history" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

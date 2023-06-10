@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">GoScan</string>
+    <string name="add_groceries">Add Groceries</string>
+    <string name="insert_title">Masukkan Judul</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="grocery_brand">Merek Barang</string>
+    <string name="grocery_type">Tipe Barang</string>
+    <string name="grocery_price">Harga Barang</string>
+    <string name="grocery_total">Jumlah Barang</string>
+    <string name="grocery_name">Nama Barang</string>
+    <string name="grocery_history">Riwayat Barang</string>
+    <string name="app_mode">Mode Tampilan</string>
+    <string name="date">17/08/2023</string>
+    <string name="total_price">Total: Rp70.00</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="success_add">Data Berhasil Disimpan</string>
+    <string name="failed_add">Data Tidak Berhasil Disimpan</string>
+    <string name="failed_get_list">Gagal Mengambil Daftar</string>
+    <string name="total_count">Total: %1$s</string>
+    <string name="payment">Pembayaran</string>
+    <string name="payment_confirmation">Apakah Belanjaan Sudah Terbayar?</string>
+    <string name="yes">IYA</string>
+    <string name="no">TIDAK</string>
+    <string name="success_adding_history">Berhasil Ditambahkan Ke Riwayat Transaksi</string>
+    <string name="failed_adding_history">Gagal Ditambahkan Ke Riwayat Transaksi</string>
+    <string name="success_adding_groceries">Berhasil Menambahkan Belanjaan</string>
+    <string name="failed_adding_groceries">Gagal Menambahkan Belanjaan</string>
+    <string name="delete_history">Hapus Riwayat Transaksi</string>
+    <string name="delete_history_title">Menghapus Riwayat Transaksi</string>
+    <string name="delete_confirmation">Apakah Anda Yakin Ingin Menghapus Riwayat Transaksi</string>
+    <string name="success_delete_history">Berhasil Menghapus Riwayat Transaksi</string>
+    <string name="failed_deleting_history">Gagal Menghapus Riwayat Transaksi</string>
+    <string name="no_data_warning">Tidak Ada Data Barang</string>
+    <string name="no_permission">Kamera Tidak Mendapatkan Izin</string>
+    <string name="rupiah">Rp %s</string>
+</resources>
