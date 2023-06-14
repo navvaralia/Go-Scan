@@ -21,7 +21,11 @@ import com.myscan.goscan.data.item_class.GroceriesItem
 import com.myscan.goscan.databinding.ActivityAddGroceriesListBinding
 import com.myscan.goscan.ui.main.MainActivity
 import com.myscan.goscan.ui.view_model.GroceriesViewModel
+import com.myscan.goscan.ui.view_model.PredictViewModel
 import com.myscan.goscan.utils.createCustomTempFile
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import java.io.File
 
 class AddGroceriesListActivity : AppCompatActivity() {
@@ -29,8 +33,7 @@ class AddGroceriesListActivity : AppCompatActivity() {
     private lateinit var groceriesViewModel: GroceriesViewModel
     private var getFile: File? = null
     private lateinit var photoPathFile: String
-
-
+    private lateinit var predictViewModel: PredictViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddGroceriesListBinding.inflate(layoutInflater)
@@ -79,6 +82,16 @@ class AddGroceriesListActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+        predictViewModel = ViewModelProvider(this)[PredictViewModel::class.java]
+
+        predictViewModel.predictName.observe(this) { prediction ->
+            binding.tiBrand.text = Editable.Factory.getInstance().newEditable(prediction.toString())
+        }
+
+        predictViewModel.predictPrice.observe(this) { prediction ->
+            binding.tiPrice.text = Editable.Factory.getInstance().newEditable(prediction.toString())
+        }
+
     }
 
     override fun onRequestPermissionsResult(
@@ -109,6 +122,7 @@ class AddGroceriesListActivity : AppCompatActivity() {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
             launchCamera.launch(intent)
 
+
         }
     }
 
@@ -120,6 +134,10 @@ class AddGroceriesListActivity : AppCompatActivity() {
             photoFiles.let { files ->
                 getFile = files
                 binding.ivImageHolder.setImageBitmap(BitmapFactory.decodeFile(files.path))
+
+                val reqPhoto =RequestBody.create("image/*".toMediaTypeOrNull(), files)
+                val photoPart = MultipartBody.Part.createFormData("image",files.name, reqPhoto)
+                predictViewModel.predictGroceries(photoPart)
             }
         }
     }

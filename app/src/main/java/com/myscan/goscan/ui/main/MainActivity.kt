@@ -3,12 +3,15 @@ package com.myscan.goscan.ui.main
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
@@ -23,6 +26,7 @@ import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import androidx.datastore.preferences.core.Preferences
+import com.myscan.goscan.databinding.PaymentPopUpBinding
 import com.myscan.goscan.utils.ModeSettingPreferences
 import com.myscan.goscan.utils.ModeSettingViewModel
 import com.myscan.goscan.utils.ModeSettingViewModelFactory
@@ -34,9 +38,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var groceriesViewModel: GroceriesViewModel
     private lateinit var rvAdapter: GroceriesAdapter
 
+    private var totalCountPopUp: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        installSplashScreen()
         setContentView(binding.root)
 
         rvAdapter = GroceriesAdapter()
@@ -48,13 +55,55 @@ class MainActivity : AppCompatActivity() {
         groceriesViewModel.getGroceriesItems { groceriesItems, totalCounts ->
             rvAdapter.submitList(groceriesItems)
             totalCountText(totalCounts)
+            totalCountPopUp = totalCounts
         }
 
         binding.btnTotalPrice.setOnClickListener {
-            AlertDialog.Builder(this)
+            val binding = PaymentPopUpBinding.inflate(layoutInflater)
+            val totalForPaying = binding.tvTotalCount
+            val totalChange = binding.tvTotalChange
+
+            val formattingCurrency =
+                NumberFormat.getCurrencyInstance(Locale("id", "ID"))
+            totalForPaying.text = formattingCurrency.format(totalCountPopUp)
+
+            val inputtedPaying = binding.tiPaying
+
+            inputtedPaying.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    val inputAmount = s.toString().toDoubleOrNull()
+                    if (inputAmount != null) {
+                        val changeTotal = inputAmount - totalCountPopUp
+
+                        totalChange.text = formattingCurrency.format(changeTotal)
+                    } else {
+                        totalChange.text = formattingCurrency.format(0)
+                    }
+                }
+
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    before: Int,
+                    count: Int
+                ) {
+                }
+            })
+
+            val dialogBuilder = android.app.AlertDialog.Builder(this)
+                .setView(binding.root)
                 .setTitle(getString(R.string.payment))
                 .setMessage(getString(R.string.payment_confirmation))
-                .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                .setPositiveButton(getString(R.string.yes)) { dialogs, _ ->
+
                     val formatDate =
                         SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(Date())
                     groceriesViewModel.transferCopyCollection(
@@ -78,10 +127,12 @@ class MainActivity : AppCompatActivity() {
                     )
 
                     groceriesViewModel.deleteAllGroceries("product")
+                    dialogs.dismiss()
                 }
-
-                .setNegativeButton(getString(R.string.no)) { _, _ -> }
-                .show()
+                .setNegativeButton(getString(R.string.no)) { dialog, _ ->
+                    dialog.dismiss()
+                }
+            dialogBuilder.show().create()
         }
 
         binding.fabAddGroceriesList.setOnClickListener {

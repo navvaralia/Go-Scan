@@ -8,10 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="beige">#F7F1E5</color>
-    <color name="lemon_lime">#ADF802</color>
-    <color name="dark_lemon_lime">#8CB42F</color>
+    <color name="calm_green">#3fcb92</color>
+    <color name="dark_calm_green">#199c6e</color>
     <color name="dark_grey">#121212</color>
-    <color name="dark_theme_lime">#D2B6E155</color>
-    <color name="dark_lime_second">#DAB5EA3E</color>
+    <color name="dark_theme_green">#1f8460</color>
+    <color name="dark_theme_second">#38BD8F</color>
     <color name="red">#DAFF0000</color>
 </resources>

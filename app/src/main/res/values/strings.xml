@@ -42,4 +42,7 @@
     <string name="no_data_warning">Tidak Ada Data Barang</string>
     <string name="no_permission">Kamera Tidak Mendapatkan Izin</string>
     <string name="rupiah">Rp %s</string>
+    <string name="payment_total">Masukkan Pembayaran</string>
+    <string name="total_change">Jumlah Kembalian:</string>
+    <string name="total_paying">Jumlah Pembayaran:</string>
 </resources>
