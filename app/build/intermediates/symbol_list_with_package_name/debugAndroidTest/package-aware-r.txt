@@ -1,0 +1,3 @@
+com.myscan.goscan.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
