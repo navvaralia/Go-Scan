@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/history_item_bg"
+    android:elevation="8dp">
+
+    <TextView
+        android:id="@+id/tvProductName"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:width="0dp"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textAlignment="center"
+        tools:text="Sari Roti" />
+
+    <TextView
+        android:id="@+id/tvProductAmount"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:width="0dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAlignment="center"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/tvProductPrice"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:width="0dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAlignment="center"
+        tools:text="Rp15.000" />
+
+    <TextView
+        android:id="@+id/tvProductDate"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:width="0dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAlignment="center"
+        tools:text="Jun 2, 2023" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "267567730165",
+    "firebase_url": "https://go-scan-388311-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "go-scan-388311",
+    "storage_bucket": "go-scan-388311.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267567730165:android:adff402cb1402938d624bc",
+        "android_client_info": {
+          "package_name": "com.myscan.goscan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267567730165-d547vj6l568kqvq3tbehtltcjipjnuro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myscan.goscan",
+            "certificate_hash": "3566d2e6afdb61b811d025495241a6084dbab8db"
+          }
+        },
+        {
+          "client_id": "267567730165-3gqodg9u5775nvcj75guve18n1od5odi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN-mPT8L5VRGqTMI3InrmVnhxQimOkZeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267567730165-3gqodg9u5775nvcj75guve18n1od5odi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

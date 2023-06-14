@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_groceries">
+
+    <fragment
+        android:id="@+id/navigation_groceries"
+        android:name="com.myscan.goscan.ui.groceries.GroceriesFragment"
+        android:label="@string/grocery"
+        tools:layout="@layout/fragment_groceries" >
+        <action
+            android:id="@+id/action_navigation_groceries_to_addGroceriesListActivity3"
+            app:destination="@id/addGroceriesListActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_transaction"
+        android:name="com.myscan.goscan.ui.transactions.TransactionFragment"
+        android:label="@string/transaction_history"
+        tools:layout="@layout/fragment_transaction" />
+    <activity
+        android:id="@+id/addGroceriesListActivity"
+        android:name="com.myscan.goscan.ui.add_item.AddGroceriesListActivity"
+        android:label="AddGroceriesListActivity"
+        tools:layout="@layout/activity_add_groceries_list"/>
+</navigation>
