@@ -3938,6 +3938,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string add_groceries
+string add_groceris_icon
 string androidx_startup
 string app_mode
 string app_name
@@ -3957,7 +3958,6 @@ string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
 string camera
-string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3982,12 +3982,9 @@ string common_signin_button_text
 string common_signin_button_text_long
 string date
 string default_web_client_id
-string delete
 string delete_confirmation
 string delete_history
 string delete_history_title
-string delete_items
-string delete_selected_confirmation
 string dest_title
 string error_a11y_label
 string error_icon_content_description
@@ -4006,6 +4003,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string groceries_amount_icon
 string grocery
 string grocery_brand
 string grocery_history
@@ -4131,6 +4129,7 @@ string path_password_strike_through
 string payment
 string payment_confirmation
 string payment_total
+string product_image
 string project_id
 string rupiah
 string search_menu_title
@@ -4152,6 +4151,7 @@ string total_change
 string total_count
 string total_paying
 string total_price
+string total_price_icon
 string transaction_history
 string yes
 style AlertDialog_AppCompat

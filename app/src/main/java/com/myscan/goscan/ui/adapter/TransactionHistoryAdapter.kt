@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.myscan.goscan.data.item_class.TransactionHistoryItem
 import com.myscan.goscan.databinding.GroceriesHistoryItemBinding
+import java.text.NumberFormat
+import java.util.*
 
 class TransactionHistoryAdapter :
     ListAdapter<TransactionHistoryItem, TransactionHistoryAdapter.HistoryViewHolder>(DIFF_CALLBACK) {
@@ -28,9 +30,12 @@ class TransactionHistoryAdapter :
     inner class HistoryViewHolder(private val binding: GroceriesHistoryItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(historyItem: TransactionHistoryItem) {
+            val formattingCurrency =
+                NumberFormat.getCurrencyInstance(Locale("id", "ID"))
+                    .format(historyItem.groceriesPrice)
             binding.tvProductName.text = historyItem.groceriesName
             binding.tvProductAmount.text = historyItem.groceriesTotal.toString()
-            binding.tvProductPrice.text = historyItem.groceriesPrice.toString()
+            binding.tvProductPrice.text = formattingCurrency.toString()
             binding.tvProductDate.text = historyItem.dateData
         }
     }
